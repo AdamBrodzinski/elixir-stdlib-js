@@ -3,5 +3,9 @@
   "extends": "airbnb",
   "env": {
     "mocha": true
+  },
+  "rules": {
+    quotes: [2, 'double', { avoidEscape: true }],
+    prefer-rest-params: 0,
   }
 }
