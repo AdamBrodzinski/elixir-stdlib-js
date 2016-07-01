@@ -9,4 +9,10 @@ export default {
     }
     return _.omit(obj, key);
   },
+
+  // Deleted the given keys from map.
+  // delete(Object, [String]) :: Object
+  drop(obj, keyList) {
+    return _.omit(obj, keyList);
+  },
 };
