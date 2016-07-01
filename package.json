@@ -1,6 +1,6 @@
 {
-  "name": "elixir-js-helpers",
-  "version": "1.0.0",
+  "name": "elixir-stdlib-js",
+  "version": "1.1.0",
   "description": "Elixir Inspired Helpers for JS",
   "main": "./lib/index.js",
   "scripts": {
@@ -18,7 +18,7 @@
   ],
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Travelport-Ukraine/npm-module-boilerplate.git"
+    "url": "git+https://github.com/AdamBrodzinski/elixir-stdlib-js.git"
   },
   "keywords": [
     "boilerplate",
@@ -30,9 +30,9 @@
   "author": "Adam Brodzinski",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/Travelport-Ukraine/npm-module-boilerplate/issues"
+    "url": "https://github.com/AdamBrodzinski/elixir-stdlib-js/issues"
   },
-  "homepage": "https://github.com/Travelport-Ukraine/npm-module-boilerplate#readme",
+  "homepage": "https://github.com/AdamBrodzinski/elixir-stdlib-js#readme",
   "devDependencies": {
     "babel": "^6.5.2",
     "babel-cli": "^6.10.1",
