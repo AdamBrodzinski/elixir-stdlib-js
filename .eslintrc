@@ -7,5 +7,6 @@
   "rules": {
     quotes: [2, 'double', { avoidEscape: true }],
     prefer-rest-params: 0,
+    object-curly-spacing: 0,
   }
 }

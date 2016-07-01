@@ -50,5 +50,8 @@
     "istanbul": "^1.0.0-alpha",
     "mocha": "^2.5.3",
     "rimraf": "^2.5.2"
+  },
+  "dependencies": {
+    "lodash": "^4.13.1"
   }
 }
