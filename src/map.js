@@ -15,4 +15,12 @@ export default {
   drop(obj, keyList) {
     return _.omit(obj, keyList);
   },
+
+
+  // Two maps are considered to be equal if they contain
+  // the same keys and those keys contain the same values.
+  // equal(object, object) :: boolean
+  equal(obj1, obj2) {
+    return _.isEqual(obj1, obj2);
+  },
 };

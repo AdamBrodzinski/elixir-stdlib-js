@@ -36,4 +36,16 @@ describe("Map", () => {
       assertEq(originalMap, {a: 1, b: 2});
     });
   });
+
+  describe("equal", () => {
+    it("should return true if objects have same contents", () => {
+      const actual = Map.equal({a: 1, b: 2}, {b: 2, a: 1});
+      assert.isTrue(actual);
+    });
+
+    it("should return false if objects do not have same contents", () => {
+      const actual = Map.equal({a: 1, b: 2}, {b: 1, a: 2});
+      assert.isFalse(actual);
+    });
+  });
 });
