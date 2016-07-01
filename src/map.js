@@ -22,4 +22,15 @@ export default {
   equal(obj1, obj2) {
     return _.isEqual(obj1, obj2);
   },
+
+  // Gets the value for a specific key. If key does not exist,
+  // return the default value (null if no default value).
+  // get(map, key, value|null) :: value
+  get(map, key, value = null) {
+    if (typeof map[key] === "undefined") {
+      return value;
+    } else {
+      return map[key];
+    }
+  },
 };

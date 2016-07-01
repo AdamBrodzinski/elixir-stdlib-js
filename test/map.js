@@ -1,6 +1,7 @@
 import { assert } from "chai";
 import { Map } from "../src";
 const assertEq = assert.deepEqual;
+const test = it;
 
 describe("Map", () => {
   describe("delete", () => {
@@ -46,6 +47,26 @@ describe("Map", () => {
     it("should return false if objects do not have same contents", () => {
       const actual = Map.equal({a: 1, b: 2}, {b: 1, a: 2});
       assert.isFalse(actual);
+    });
+  });
+
+  describe("get", () => {
+    test("return nil if no default value is passed", () => {
+      const expected = null;
+      const actual = Map.get({a: 1}, "b");
+      assertEq(expected, actual);
+    });
+
+    test("return value", () => {
+      const expected = 1;
+      const actual = Map.get({a: 1}, "a");
+      assertEq(expected, actual);
+    });
+
+    test("return default value when key is not found", () => {
+      const expected = 3;
+      const actual = Map.get({a: 1}, "b", 3);
+      assertEq(expected, actual);
     });
   });
 });
