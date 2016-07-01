@@ -29,8 +29,7 @@ export default {
   get(map, key, value = null) {
     if (typeof map[key] === "undefined") {
       return value;
-    } else {
-      return map[key];
     }
+    return map[key];
   },
 };
