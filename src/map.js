@@ -2,7 +2,7 @@ import _ from "lodash";
 
 export default {
   // Deletes the entries in map for a specific key.
-  // delete(Object, String) :: Object
+  // delete(object, string) :: object
   delete(obj, key) {
     if (typeof obj[key] === "undefined") {
       return obj;
@@ -11,11 +11,10 @@ export default {
   },
 
   // Deleted the given keys from map.
-  // delete(Object, [String]) :: Object
+  // delete(object, [string]) :: object
   drop(obj, keyList) {
     return _.omit(obj, keyList);
   },
-
 
   // Two maps are considered to be equal if they contain
   // the same keys and those keys contain the same values.
