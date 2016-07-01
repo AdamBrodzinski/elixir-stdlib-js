@@ -5,19 +5,19 @@ const test = it;
 
 describe("Map", () => {
   describe("delete", () => {
-    it("should remove they key passed in", () => {
+    test("should remove they key passed in", () => {
       const expected = {b: 2};
       const actual = Map.delete({a: 1, b: 2}, "a");
       assertEq(expected, actual);
     });
 
-    it("should not mutate object passsed in", () => {
+    test("should not mutate object passsed in", () => {
       const originalMap = {a: 1, b: 2};
       Map.delete(originalMap, "b");
       assertEq(originalMap, {a: 1, b: 2});
     });
 
-    it("should leave object unchanged if no keys are found", () => {
+    test("should leave object unchanged if no keys are found", () => {
       const originalMap = {a: 1, b: 2};
       const returnedMap = Map.delete(originalMap, "c");
       assert.isTrue(originalMap === returnedMap);
@@ -25,13 +25,13 @@ describe("Map", () => {
   });
 
   describe("drop", () => {
-    it("should remove they key passed in", () => {
+    test("should remove they key passed in", () => {
       const expected = {a: 1, c: 3};
       const actual = Map.drop({a: 1, b: 2, c: 3}, ["b", "d"]);
       assertEq(expected, actual);
     });
 
-    it("should not mutate object passsed in", () => {
+    test("should not mutate object passsed in", () => {
       const originalMap = {a: 1, b: 2};
       Map.delete(originalMap, ["b"]);
       assertEq(originalMap, {a: 1, b: 2});
@@ -39,12 +39,12 @@ describe("Map", () => {
   });
 
   describe("equal", () => {
-    it("should return true if objects have same contents", () => {
+    test("should return true if objects have same contents", () => {
       const actual = Map.equal({a: 1, b: 2}, {b: 2, a: 1});
       assert.isTrue(actual);
     });
 
-    it("should return false if objects do not have same contents", () => {
+    test("should return false if objects do not have same contents", () => {
       const actual = Map.equal({a: 1, b: 2}, {b: 1, a: 2});
       assert.isFalse(actual);
     });
