@@ -49,4 +49,22 @@ export default {
   merge(map1, map2) {
     return _.extend({}, map1, map2);
   },
+
+  new(list) {
+    if (arguments.length === 0) {
+      return {};
+    }
+    else if (arguments.length > 0 && _.isArray(list)) {
+      return _.chain(list)
+        // destructure tuple and return new object from key/val
+        .map(([key, val]) => ({[key]: val}))
+        .reduce((map1, map2) => _.extend(map1, map2), {})
+        .value();
+    }
+    else {
+      const msg = "arg must be a list of tuples (array [['a', 1], ['b', 2]])";
+      throw new Error(msg);
+    }
+  },
+
 };

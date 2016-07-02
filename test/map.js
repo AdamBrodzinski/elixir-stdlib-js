@@ -118,4 +118,26 @@ describe("Map", () => {
     });
   });
 
+  describe("new", () => {
+    test("return an empty map with no arguments", () => {
+      const expected = {};
+      const actual = Map.new();
+      assertEq(expected, actual);
+    });
+
+    test("create a map from list of key/value tuples", () => {
+      const expected = {a: 1, b: 2};
+      const actual = Map.new([["a", 1], ["b", 2]]);
+      assertEq(expected, actual);
+    });
+
+    test("throw error if a list is not used as an arg for Map.new/1", () => {
+      try {
+        Map.new(2);
+      } catch (e) {
+        const msg = "arg must be a list of tuples (array [['a', 1], ['b', 2]])";
+        assertEq(e.message, msg);
+      }
+    });
+  });
 });
