@@ -69,4 +69,16 @@ describe("Map", () => {
       assertEq(expected, actual);
     });
   });
+
+  describe("hasKey", () => {
+    test("should return true if object has key", () => {
+      const actual = Map.hasKey({a: 1}, "a");
+      assert.isTrue(actual);
+    });
+
+    test("should return false if object does not have key", () => {
+      const actual = Map.hasKey({a: 1}, "b");
+      assert.isFalse(actual);
+    });
+  });
 });

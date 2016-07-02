@@ -32,4 +32,10 @@ export default {
     }
     return map[key];
   },
+
+  // Returns whether a given key exists in the given map.
+  // hasKey(map, key) :: boolean
+  hasKey(map, key) {
+    return typeof map[key] !== "undefined";
+  },
 };
