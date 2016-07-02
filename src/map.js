@@ -43,4 +43,10 @@ export default {
   // keys(map) :: [key]
   keys: _.keys,
 
+  // Merges two maps into one.
+  // All keys in map2 will be added to map1, overriding any existing one.
+  // merge(map, map) :: map
+  merge(map1, map2) {
+    return _.extend({}, map1, map2);
+  },
 };

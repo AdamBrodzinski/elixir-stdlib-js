@@ -96,4 +96,26 @@ describe("Map", () => {
     });
   });
 
+  describe("merge/2", () => {
+    test("merge keys from second map into first map", () => {
+      const expected = {a: 1, b: 2, d: 4};
+      const actual = Map.merge({a: 1, b: 2}, {d: 4});
+      assertEq(expected, actual);
+    });
+
+    test("override existing keys on map1", () => {
+      const expected = {a: 3, b: 2, d: 4};
+      const actual = Map.merge({a: 1, b: 2}, {a: 3, d: 4});
+      assertEq(expected, actual);
+    });
+
+    test("should not mutate original maps", () => {
+      const map1 = {a: 1, b: 2};
+      const map2 = {a: 3, d: 4};
+      Map.merge(map1, map2);
+      assertEq(map1, {a: 1, b: 2});
+      assertEq(map2, {a: 3, d: 4});
+    });
+  });
+
 });
