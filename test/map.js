@@ -81,4 +81,19 @@ describe("Map", () => {
       assert.isFalse(actual);
     });
   });
+
+  describe("keys", () => {
+    test("returns all the keys of an object", () => {
+      const expected = ["a", "b"];
+      const actual = Map.keys({a: 1, b: 2});
+      assertEq(expected, actual);
+    });
+
+    test("returns empty array if object has no keys", () => {
+      const expected = [];
+      const actual = Map.keys({});
+      assertEq(expected, actual);
+    });
+  });
+
 });

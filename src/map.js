@@ -38,4 +38,9 @@ export default {
   hasKey(map, key) {
     return typeof map[key] !== "undefined";
   },
+
+  // Returns all keys from a map.
+  // keys(map) :: [key]
+  keys: _.keys,
+
 };
