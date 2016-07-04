@@ -1,4 +1,5 @@
 import _ from "lodash/core";
+import capitalize from "lodash/capitalize";
 
 export default {
   // Returns the char at the position of the given utf8 string.
@@ -15,4 +16,9 @@ export default {
     }
     return str.charAt(position);
   },
+
+  // Converts the first character in the given string to
+  // uppercase and the remainder to lowercase.
+  // capitalize(string) :: string
+  capitalize,
 };

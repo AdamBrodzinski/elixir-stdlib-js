@@ -35,4 +35,18 @@ describe("String", () => {
       assertEq(expected, actual);
     });
   });
+
+  describe("capitalize", () => {
+    test("should capitalize the first letter of a word", () => {
+      const expected = "Abcd";
+      const actual = String.capitalize("abCd");
+      assertEq(expected, actual);
+    });
+
+    test("should capitalize words with accent symbols", () => {
+      const expected = "Olá";
+      const actual = String.capitalize("olá");
+      assertEq(expected, actual);
+    });
+  });
 });
