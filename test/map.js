@@ -134,10 +134,37 @@ describe("Map", () => {
     test("throw error if a list is not used as an arg for Map.new/1", () => {
       try {
         Map.new(2);
-      } catch (e) {
+      }
+      catch (e) {
         const msg = "arg must be a list of tuples (array [['a', 1], ['b', 2]])";
         assertEq(e.message, msg);
       }
+    });
+  });
+
+  describe("pop", () => {
+    test("should return value and object", () => {
+      const expected = Map.pop({a: 1}, "a");
+      const actual = [1, {}];
+      assertEq(expected, actual);
+    });
+
+    test("should return null if key not found and no default value passed in", () => {
+      const expected = Map.pop({a: 1}, "b");
+      const actual = [null, {a: 1}];
+      assertEq(expected, actual);
+    });
+
+    test("should return default value and object", () => {
+      const expected = Map.pop({a: 1}, "b", 3);
+      const actual = [3, {a: 1}];
+      assertEq(expected, actual);
+    });
+
+    test("should not mutate orginal map", () => {
+      const map = {a: 1};
+      Map.pop(map, "a");
+      assertEq(map, {a: 1});
     });
   });
 });

@@ -61,10 +61,17 @@ export default {
         .reduce((map1, map2) => _.extend(map1, map2), {})
         .value();
     }
-    else {
-      const msg = "arg must be a list of tuples (array [['a', 1], ['b', 2]])";
-      throw new Error(msg);
-    }
+    const msg = "arg must be a list of tuples (array [['a', 1], ['b', 2]])";
+    throw new Error(msg);
   },
 
+  // Returns and removes the value associated with key in map.
+  // optional default value can be passed in if key not found
+  // pop(map, key, value) :: [value, map]
+  pop(map, key, value = null) {
+    if (typeof map[key] === "undefined") {
+      return [value, _.omit(map, key)];
+    }
+    return [map[key], _.omit(map, key)];
+  },
 };
