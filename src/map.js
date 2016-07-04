@@ -100,4 +100,9 @@ export default {
   split(map, keys) {
     return [_.pick(map, keys), omit(map, keys)];
   },
+
+  // Takes all entries corresponding to the given keys and returns them in a new map.
+  // take(map, [keys]) :: map
+  take: _.pick,
+
 };

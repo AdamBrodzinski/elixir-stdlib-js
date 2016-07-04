@@ -222,4 +222,18 @@ describe("Map", () => {
       assertEq(map, {a: 1, b: 2, c: 3});
     });
   });
+
+  describe("take", () => {
+    test("take keys and return in a new map", () => {
+      const expected = Map.take({a: 1, b: 2, c: 3}, ["a", "c", "e"]);
+      const actual = {a: 1, c: 3};
+      assertEq(expected, actual);
+    });
+
+    test("should not mutate orginal map", () => {
+      const map = {a: 1, b: 2, c: 3};
+      Map.take({a: 1, b: 2, c: 3}, ["a", "c", "e"]);
+      assertEq(map, {a: 1, b: 2, c: 3});
+    });
+  });
 });
