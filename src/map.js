@@ -74,4 +74,10 @@ export default {
     }
     return [map[key], _.omit(map, key)];
   },
+
+  // Puts the given value under key. Adds key if not present
+  // put(map, key, value) :: map
+  put(map, key, value) {
+    return _.set({...map}, key, value);
+  },
 };
