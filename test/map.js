@@ -187,4 +187,25 @@ describe("Map", () => {
       assertEq(map, {a: 1});
     });
   });
+
+
+  describe("putNew", () => {
+    test("put value into object if key doesnt exist", () => {
+      const expected = Map.put({a: 1}, "b", 2);
+      const actual = {b: 2, a: 1};
+      assertEq(expected, actual);
+    });
+
+    test("should not override default value if key exists", () => {
+      const expected = Map.putNew({a: 1, b: 2}, "a", 3);
+      const actual = {a: 1, b: 2};
+      assertEq(expected, actual);
+    });
+
+    test("should not mutate orginal map", () => {
+      const map = {a: 1};
+      Map.putNew(map, "b", 2);
+      assertEq(map, {a: 1});
+    });
+  });
 });

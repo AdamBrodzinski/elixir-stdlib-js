@@ -80,4 +80,13 @@ export default {
   put(map, key, value) {
     return _.set({...map}, key, value);
   },
+
+  // Puts the given value under key unless the entry key already exists.
+  // put(map, key, value) :: map
+  putNew(map, key, value) {
+    if (typeof map[key] !== "undefined") {
+      return map;
+    }
+    return _.set({...map}, key, value);
+  },
 };
