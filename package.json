@@ -1,6 +1,6 @@
 {
   "name": "elixir-stdlib-js",
-  "version": "1.1.0",
+  "version": "1.2.0",
   "description": "Elixir Inspired Helpers for JS",
   "main": "./lib/index.js",
   "scripts": {
