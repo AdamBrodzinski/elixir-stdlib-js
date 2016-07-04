@@ -105,4 +105,16 @@ export default {
   // take(map, [keys]) :: map
   take: _.pick,
 
+  // Converts map to a list of tuples
+  // to_list(map) :: [[key, value]]
+  toList(map) {
+    const keys = _.keys(map);
+    const vals = _.values(map);
+    const result = [];
+
+    for (let i = 0; i < keys.length; i++) {
+      result.push([keys[i], vals[i]]);
+    }
+    return result;
+  },
 };

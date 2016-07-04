@@ -236,4 +236,18 @@ describe("Map", () => {
       assertEq(map, {a: 1, b: 2, c: 3});
     });
   });
+
+  describe("toList", () => {
+    test("convert map to list of tuples", () => {
+      const expected = Map.toList({a: 1, b: 2});
+      const actual = [["a", 1], ["b", 2]];
+      assertEq(expected, actual);
+    });
+
+    test("should not mutate orginal map", () => {
+      const map = {a: 1, b: 2};
+      Map.toList(map);
+      assertEq(map, {a: 1, b: 2});
+    });
+  });
 });
