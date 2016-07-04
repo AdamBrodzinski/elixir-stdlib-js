@@ -117,4 +117,13 @@ export default {
     }
     return result;
   },
+
+  // Updates the key with the given function.
+  // If the key does not exist, returns map unchanged
+  // update(map, key, (value -> value)) :: map
+  update(map, key, fun) {
+    const mapCopy = {...map};
+    mapCopy[key] = fun(mapCopy[key]);
+    return mapCopy;
+  },
 };

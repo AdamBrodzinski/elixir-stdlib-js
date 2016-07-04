@@ -250,4 +250,18 @@ describe("Map", () => {
       assertEq(map, {a: 1, b: 2});
     });
   });
+
+  describe("update", () => {
+    test("update key with given function", () => {
+      const expected = Map.update({a: 1}, "a", (val) => val * 2);
+      const actual = {a: 2};
+      assertEq(expected, actual);
+    });
+
+    test("should not mutate orginal map", () => {
+      const map = {a: 1};
+      Map.update(map, "a", (val) => val * 2);
+      assertEq(map, {a: 1});
+    });
+  });
 });
