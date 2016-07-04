@@ -1,6 +1,6 @@
 # Version History
 
-## v 1.2.0
+## v 1.2.1
 
 Adds the Map module with:
 
@@ -11,7 +11,7 @@ Adds the Map module with:
 - `new/1`
 - `pop`
 - `put`
-- `put_new`
+- `putNew`
 - `split`
 - `take`
 - `toList`
