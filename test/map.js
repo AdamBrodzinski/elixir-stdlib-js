@@ -208,4 +208,18 @@ describe("Map", () => {
       assertEq(map, {a: 1});
     });
   });
+
+  describe("split", () => {
+    test("split into two lists", () => {
+      const expected = Map.split({a: 1, b: 2, c: 3}, ["a", "c", "e"]);
+      const actual = [{a: 1, c: 3}, {b: 2}];
+      assertEq(expected, actual);
+    });
+
+    test("should not mutate orginal map", () => {
+      const map = {a: 1, b: 2, c: 3};
+      Map.split(map, "b", 2);
+      assertEq(map, {a: 1, b: 2, c: 3});
+    });
+  });
 });

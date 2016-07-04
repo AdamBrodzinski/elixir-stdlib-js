@@ -1,4 +1,6 @@
 import _ from "lodash";
+import pick from "lodash/pick";
+import omit from "lodash/omit";
 
 export default {
   // Deletes the entries in map for a specific key.
@@ -88,5 +90,13 @@ export default {
       return map;
     }
     return _.set({...map}, key, value);
+  },
+
+  // Takes all entries corresponding to the given keys and extracts them into a separate map.
+  // Returns a tuple with the new map and the old map with removed keys.
+  // Keys for which there are no entries in map are ignored.
+  // split(map, [key]) :: [map, map]
+  split(map, keys) {
+    return [pick(map, keys), omit(map, keys)];
   },
 };
