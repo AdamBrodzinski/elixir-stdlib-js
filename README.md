@@ -6,7 +6,7 @@ All objects and arrays are copied and the originals are never mutated. Keys are 
 
 [ ![Codeship Status for AdamBrodzinski/elixir-stdlib-js](https://codeship.com/projects/961d6080-b158-0132-e813-32bd639983ea/status?branch=master)](https://codeship.com/projects/69814)
 
-### Map
+### IO
 
 - IO.puts
 - IO.inspect
