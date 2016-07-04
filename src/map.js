@@ -1,6 +1,7 @@
-import _ from "lodash";
-import pick from "lodash/pick";
+import _ from "lodash/core";
+import set from "lodash/set";
 import omit from "lodash/omit";
+
 
 export default {
   // Deletes the entries in map for a specific key.
@@ -9,13 +10,13 @@ export default {
     if (typeof obj[key] === "undefined") {
       return obj;
     }
-    return _.omit(obj, key);
+    return omit(obj, key);
   },
 
   // Deleted the given keys from map.
   // delete(object, [string]) :: object
   drop(obj, keyList) {
-    return _.omit(obj, keyList);
+    return omit(obj, keyList);
   },
 
   // Two maps are considered to be equal if they contain
@@ -72,15 +73,15 @@ export default {
   // pop(map, key, value) :: [value, map]
   pop(map, key, value = null) {
     if (typeof map[key] === "undefined") {
-      return [value, _.omit(map, key)];
+      return [value, omit(map, key)];
     }
-    return [map[key], _.omit(map, key)];
+    return [map[key], omit(map, key)];
   },
 
   // Puts the given value under key. Adds key if not present
   // put(map, key, value) :: map
   put(map, key, value) {
-    return _.set({...map}, key, value);
+    return set({...map}, key, value);
   },
 
   // Puts the given value under key unless the entry key already exists.
@@ -89,7 +90,7 @@ export default {
     if (typeof map[key] !== "undefined") {
       return map;
     }
-    return _.set({...map}, key, value);
+    return set({...map}, key, value);
   },
 
   // Takes all entries corresponding to the given keys and extracts them into a separate map.
@@ -97,6 +98,6 @@ export default {
   // Keys for which there are no entries in map are ignored.
   // split(map, [key]) :: [map, map]
   split(map, keys) {
-    return [pick(map, keys), omit(map, keys)];
+    return [_.pick(map, keys), omit(map, keys)];
   },
 };
