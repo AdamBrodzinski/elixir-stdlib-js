@@ -264,4 +264,12 @@ describe("Map", () => {
       assertEq(map, {a: 1});
     });
   });
+
+  describe("update", () => {
+    test("return a list of the maps values", () => {
+      const expected = Map.values({a: 1, b: 2});
+      const actual = [1, 2];
+      assertEq(expected, actual);
+    });
+  });
 });

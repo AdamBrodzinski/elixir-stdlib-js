@@ -126,4 +126,8 @@ export default {
     mapCopy[key] = fun(mapCopy[key]);
     return mapCopy;
   },
+
+  // Returns all values from map
+  // values(map) :: [value]
+  values: _.values,
 };
