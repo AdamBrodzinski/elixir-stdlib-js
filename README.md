@@ -31,8 +31,7 @@ All objects and arrays are copied and the originals are never mutated. Keys are 
 - Map.toList
 - Map.update
 - Map.values
-
-[Elixir docs - Map](http://elixir-lang.org/docs/stable/elixir/Map.html)
+- [Elixir docs - Map](http://elixir-lang.org/docs/stable/elixir/Map.html)
 
 ### Function piping
 
