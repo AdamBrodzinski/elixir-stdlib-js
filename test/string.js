@@ -49,4 +49,30 @@ describe("String", () => {
       assertEq(expected, actual);
     });
   });
+
+  describe("contains", () => {
+    test("string contains part of the arg passed in", () => {
+      const expected = true;
+      const actual = String.contains("elixir of life", "of");
+      assertEq(expected, actual);
+    });
+
+    test("string does not contain part of the arg passed in", () => {
+      const expected = false;
+      const actual = String.contains("elixir of life", "bar");
+      assertEq(expected, actual);
+    });
+
+    test("string has one of the patterns passed in", () => {
+      const expected = true;
+      const actual = String.contains("elixir of life", ["life", "death"]);
+      assertEq(expected, actual);
+    });
+
+    test("string does not have one of the patterns passed in", () => {
+      const expected = false;
+      const actual = String.contains("elixir of life", ["death", "mercury"]);
+      assertEq(expected, actual);
+    });
+  });
 });
