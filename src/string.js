@@ -29,7 +29,8 @@ export default {
     let patterns;
     if (_.isArray(pat)) {
       patterns = pat;
-    } else {
+    }
+    else {
       patterns = [pat];
     }
 
