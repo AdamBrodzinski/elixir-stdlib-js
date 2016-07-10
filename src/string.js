@@ -41,4 +41,10 @@ export default {
 
     return results.indexOf(true) >= 0;
   },
+
+  // Converts all characters in the given string to lowercase.
+  // downcase(string) :: string
+  downcase(str) {
+    return str.toLowerCase();
+  },
 };

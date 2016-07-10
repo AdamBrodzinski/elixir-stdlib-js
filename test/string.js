@@ -75,4 +75,18 @@ describe("String", () => {
       assertEq(expected, actual);
     });
   });
+
+  describe("downcase", () => {
+    test("converts all characters in the given string to lowercase", () => {
+      const expected = "abcd";
+      const actual = String.downcase("ABCD");
+      assertEq(expected, actual);
+    });
+
+    test("converts all characters in the given string to lowercase", () => {
+      const expected = "ab 123 xpto";
+      const actual = String.downcase("AB 123 XPTO");
+      assertEq(expected, actual);
+    });
+  });
 });
