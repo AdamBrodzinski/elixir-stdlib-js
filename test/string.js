@@ -89,4 +89,24 @@ describe("String", () => {
       assertEq(expected, actual);
     });
   });
+
+  describe("duplicate", () => {
+    test("return a string multiple times", () => {
+      const expected = "abcabc";
+      const actual = String.duplicate("abc", 2);
+      assertEq(expected, actual);
+    });
+
+    test("returns '' if count is 0", () => {
+      const expected = "";
+      const actual = String.duplicate("abc", 0);
+      assertEq(expected, actual);
+    });
+
+    test("doesnt repeat if count is 1", () => {
+      const expected = "abc";
+      const actual = String.duplicate("abc", 1);
+      assertEq(expected, actual);
+    });
+  });
 });

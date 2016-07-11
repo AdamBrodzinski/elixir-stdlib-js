@@ -1,5 +1,6 @@
 import _ from "lodash/core";
 import capitalize from "lodash/capitalize";
+import repeat from "lodash/repeat";
 
 export default {
   // Returns the char at the position of the given utf8 string.
@@ -47,4 +48,8 @@ export default {
   downcase(str) {
     return str.toLowerCase();
   },
+
+  // Returns a string subject duplicated n times.
+  // duplicate(string, non_neg_integer) :: string
+  duplicate: repeat,
 };
