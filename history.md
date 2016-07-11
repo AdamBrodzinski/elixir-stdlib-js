@@ -1,5 +1,17 @@
 # Version History
 
+
+## v 1.4.0
+
+Adds the following funcitons to the String module.
+
+- String.at
+- String.capitalize
+- String.contains
+- String.downcase
+- String.duplicate
+
+
 ## v 1.3.0
 
 Adds `inspect` and `run` lodash mixins. Now you can call `.inspect()` in a pipeline and it will print out the contents. Using `.run` allows you to use normal functions in a pipeline like Elixir does (passing arguments in when the function is called).
