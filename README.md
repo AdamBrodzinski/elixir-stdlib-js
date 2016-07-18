@@ -47,7 +47,7 @@ All objects and arrays are copied and the originals are never mutated. Keys are 
 
 Elixir encourages the use of function "pipelines" and has a similar style to lodashes `_.chain` method. For convenience we've exposed a `pipe` function that aliases chain. We've also mixed in the `IO.inspect` function so that you can call `.inspect()` without any extra work. To add a function to the pipeline just use the `.run(yourFunc, arg1, arg2)` to include it. This works the same as `|> yourFunc(arg1, arg2)` in Elixir.
 
-```
+```javascript
 import {pipe} from "elixir-stdlib-js"
 
 function stripChars(str, char) {
