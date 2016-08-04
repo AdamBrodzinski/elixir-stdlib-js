@@ -41,7 +41,7 @@ All objects and arrays are copied and the originals are never mutated. Keys are 
 - String.contains
 - String.downcase
 - String.duplicate
-
+- [Elixir docs - Map](http://elixir-lang.org/docs/stable/elixir/String.html)
 
 ### Function piping
 
