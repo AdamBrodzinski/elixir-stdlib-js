@@ -1,5 +1,6 @@
 import { assert } from "chai";
 import { String } from "../src";
+
 const assertEq = assert.deepEqual;
 const test = global.it;
 

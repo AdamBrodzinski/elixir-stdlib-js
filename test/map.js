@@ -1,5 +1,6 @@
 import { assert } from "chai";
 import { Map } from "../src";
+
 const assertEq = assert.deepEqual;
 const test = it;
 
