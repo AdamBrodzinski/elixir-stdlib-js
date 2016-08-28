@@ -1,7 +1,3 @@
-/* global arguments */
-/* eslint no-console: 0 */
-/* eslint prefer-spread: 0 */
-
 export default {
   // puts(any) :: "ok"
   puts() {

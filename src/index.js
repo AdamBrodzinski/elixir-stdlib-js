@@ -1,4 +1,3 @@
-/* eslint no-console: 0 */
 import _ from "lodash";
 
 export { default as lodash } from "lodash/core";
