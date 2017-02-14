@@ -34,7 +34,7 @@
   },
   "homepage": "https://github.com/AdamBrodzinski/elixir-stdlib-js#readme",
   "devDependencies": {
-    "babel": "^6.5.2",
+    "babel": "^6.23.0",
     "babel-cli": "^6.10.1",
     "babel-eslint": "^7.0.0",
     "babel-preset-es2015": "^6.13.1",
