@@ -130,4 +130,14 @@ export default {
   // Returns all values from map
   // values(map) :: [value]
   values: _.values,
+
+  // Alters the value stored under key to value, but only if the entry key already
+  // exists in the object
+  // replace(map, key, value) :: map
+  replace(map, key, value) {
+    if (this.hasKey(map, key)) {
+      return {...map, [key]: value};
+    }
+    return map;
+  },
 };
