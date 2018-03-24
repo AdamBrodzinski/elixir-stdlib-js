@@ -273,4 +273,18 @@ describe("Map", () => {
       assertEq(expected, actual);
     });
   });
+
+  describe("replace", () => {
+    test("should update a value under a pre-existing key", () => {
+      const expected = {a: 2, b: 2};
+      const actual = Map.replace({a: 1, b: 2}, "a", 2);
+      assertEq(expected, actual);
+    });
+
+    test("should make no change if the key is not present in the object", () => {
+      const expected = {a: 1, b: 2};
+      const actual = Map.replace({a: 1, b: 2}, "c", 3);
+      assertEq(expected, actual);
+    });
+  });
 });
