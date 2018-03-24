@@ -1,3 +1,4 @@
+// @flow
 import _ from "lodash/core";
 import capitalize from "lodash/capitalize";
 import repeat from "lodash/repeat";
@@ -6,7 +7,7 @@ export default {
   // Returns the char at the position of the given utf8 string.
   // If position is greater than string length, then it returns nil.
   // at(t, integer) :: string | null
-  at(str, position) {
+  at(str: string, position: number): ?string {
     const isNegative = Math.sign(position) === -1;
 
     if (position >= str.length) {
@@ -26,26 +27,17 @@ export default {
   // Checks if string contains any of the given contents.
   // contents can be either a single string or a list of strings.
   // contains(string, [string] | string) :: boolean
-  contains(str, pat) {
-    let patterns;
-    if (_.isArray(pat)) {
-      patterns = pat;
+  contains(str: string, patterns: Array<string> | string): boolean {
+    if (_.isString(patterns)) {
+      return do_contains(str, [patterns]);
+    } else {
+      return do_contains(str, patterns);
     }
-    else {
-      patterns = [pat];
-    }
-
-    const results = patterns.map(pattern => {
-      const result = str.match(pattern);
-      return result !== null;
-    });
-
-    return results.indexOf(true) >= 0;
   },
 
   // Converts all characters in the given string to lowercase.
   // downcase(string) :: string
-  downcase(str) {
+  downcase(str: string): string {
     return str.toLowerCase();
   },
 
@@ -53,3 +45,12 @@ export default {
   // duplicate(string, non_neg_integer) :: string
   duplicate: repeat,
 };
+
+function do_contains(str: string, patterns: Array<string>): boolean {
+  const results = patterns.map(pattern => {
+    const result = str.match(pattern);
+    return result !== null;
+  });
+
+  return results.indexOf(true) >= 0;
+}
