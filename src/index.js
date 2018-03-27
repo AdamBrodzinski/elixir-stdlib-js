@@ -12,7 +12,7 @@ export const pipe = _.chain; // match Elixir terminology
 
 _.mixin({
   // mixin IO.inspect for convenience
-  inspect(arg1) {
+  inspect(arg1: any): any {
     console.log(arg1);
     return arg1;
   },
@@ -26,7 +26,7 @@ _.mixin({
   //   .run(stripChars, " ")
   //   .value()
   //
-  run(firstParam, func, ...restParams) {
+  run(firstParam: any, func: (...any) => any, ...restParams: any): any {
     return func(firstParam, ...restParams);
   },
 });

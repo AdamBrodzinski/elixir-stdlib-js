@@ -1,4 +1,4 @@
-import _ from "lodash/core";
+// @flow
 import capitalize from "lodash/capitalize";
 import repeat from "lodash/repeat";
 
@@ -6,7 +6,7 @@ export default {
   // Returns the char at the position of the given utf8 string.
   // If position is greater than string length, then it returns nil.
   // at(t, integer) :: string | null
-  at(str, position) {
+  at(str: string, position: number): ?string {
     const isNegative = Math.sign(position) === -1;
 
     if (position >= str.length) {
@@ -26,9 +26,9 @@ export default {
   // Checks if string contains any of the given contents.
   // contents can be either a single string or a list of strings.
   // contains(string, [string] | string) :: boolean
-  contains(str, pat) {
+  contains(str: string, pat: Array<string> | string): boolean {
     let patterns;
-    if (_.isArray(pat)) {
+    if (Array.isArray(pat)) {
       patterns = pat;
     }
     else {
@@ -45,7 +45,7 @@ export default {
 
   // Converts all characters in the given string to lowercase.
   // downcase(string) :: string
-  downcase(str) {
+  downcase(str: string): string {
     return str.toLowerCase();
   },
 

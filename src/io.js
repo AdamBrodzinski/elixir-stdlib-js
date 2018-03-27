@@ -1,6 +1,7 @@
+// @flow
 export default {
   // puts(any) :: "ok"
-  puts() {
+  puts(): string {
     console.log.apply(console, arguments);
     return "ok";
   },
@@ -20,7 +21,7 @@ export default {
   // >> [6,8]
   //
   // puts(any) :: any
-  inspect(arg1) {
+  inspect(arg1: any): any {
     console.log(arg1);
     return arg1;
   },
