@@ -4,6 +4,7 @@ export { default as lodash } from "lodash/core";
 export { default as IO } from "./io";
 export { default as Map } from "./map";
 export { default as String } from "./string";
+export { default as Enum } from "./enum";
 export const pipe = _.chain; // match Elixir terminology
 
 
