@@ -35,6 +35,12 @@ describe('Enum', () => {
       const actual = Enum.at([5, 2, undefined, 7, 3, 5], 2);
       assertEq(expected, actual);
     });
+
+    it('should return the default value if the index is out of range', () => {
+      const expected = NaN;
+      const actual = Enum.at([5, 2, 7, 3, 5], 5, NaN);
+      assertEq(expected, actual);
+    });
   });
 
   describe('map', () => {
